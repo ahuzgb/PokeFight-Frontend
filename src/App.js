@@ -1,8 +1,8 @@
 import "./App.css";
 import { Route, Routes } from "react-router-dom";
-import Pokedex from "./Pokedex";
-import PokeInfo from "./PokeInfo";
-import PokeStats from "./PokeStats";
+import AllPokemon from "./Components/AllPokemon";
+import SinglePokemon from "./Components/SinglePokemon";
+import Filter from "./Components/Filter";
 import axios from "axios";
 import { useState, useEffect } from "react";
 
@@ -27,9 +27,9 @@ function App() {
   return (
     <div className="App">
       <Routes>
-        <Route path="/" element={<Pokedex pokedex={pokedex} />} />
-        <Route path="/:id" element={<PokeInfo />} />
-        <Route path="/:id/:info" element={<PokeStats />} />
+        <Route path="/" element={<Filter pokedex={pokedex} />} />
+        <Route path="/all" element={<AllPokemon pokedex={pokedex} />} />
+        <Route path="/:id" element={<SinglePokemon pokedex={pokedex} />} />
       </Routes>
     </div>
   );
