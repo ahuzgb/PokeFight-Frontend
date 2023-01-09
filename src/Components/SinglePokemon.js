@@ -1,14 +1,11 @@
 import "../App.css";
-import { Route, Routes, useParams } from "react-router-dom";
+import { Route, Routes, useParams, Link } from "react-router-dom";
+import { useState } from "react";
 
-function PokeInfo({ pokedex }) {
+function PokeInfo({ pokedex, setFighter, fighter }) {
   const { id } = useParams();
 
   const onePokemon = pokedex.find((pokemon) => pokemon.id === Number(id));
-
-  console.log(pokedex);
-  console.log(onePokemon);
-  console.log("Hey!");
 
   return (
     <div className="SinglePokemon">
@@ -26,6 +23,16 @@ function PokeInfo({ pokedex }) {
       <p>Sp. Attack: {onePokemon?.base["Sp. Attack"]}</p>
       <p>Sp. Defense: {onePokemon?.base["Sp. Defense"]}</p>
       <p>Speed {onePokemon?.base.Speed}</p>
+      <Link to={`/${onePokemon.id}/fight`}>
+        <button
+          onClick={() => {
+            setFighter(onePokemon);
+            return console.log(fighter);
+          }}
+        >
+          Choose Pokémon
+        </button>
+      </Link>
     </div>
   );
 }

@@ -15,7 +15,7 @@ function Filter({ pokedex }) {
   const types = [
     "All types",
     "Normal",
-    "Psycho",
+    "Psychic",
     "Bug",
     "Fire",
     "Water",
@@ -88,6 +88,22 @@ function Filter({ pokedex }) {
       );
       return setResults(filterTwo);
     }
+
+    /*     const filter = pokedex.filter((pokemon) =>
+      pokemon.name.english.toLowerCase().includes(lowerCase)
+    );
+
+    if (filter.length === 0) {
+      return alert("No match");
+    } else if (currentType === "All types") {
+      console.log(filter);
+    } else {
+      filter.filter((pokemon) => pokemon.type.includes(currentType));
+    }
+
+    setResults(filter);
+
+    if (filter.length === 0) return alert("No match"); */
   };
 
   console.log(results);
