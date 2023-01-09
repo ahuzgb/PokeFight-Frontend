@@ -57,14 +57,8 @@ function Filter({ pokedex }) {
     e.preventDefault();
     const lowerCase = query.toLowerCase();
     console.log(lowerCase);
-    /*     const filter = pokedex.filter((pokemon) => {
-      //    if (query === "") {
-      //
-      //   } else
-      if (
-        currentType === "All types"
-        //     currentGeneration === "All generations"
-      ) {
+    const filter = pokedex.filter((pokemon) => {
+      if (currentType === "All types") {
         return pokemon.name.english.toLowerCase().includes(lowerCase);
       } else {
         return (
@@ -72,38 +66,12 @@ function Filter({ pokedex }) {
           pokemon.type.includes(currentType)
         );
       }
-    }); */
-
-    const filterOne = pokedex.filter((pokemon) =>
-      pokemon.name.english.toLowerCase().includes(lowerCase)
-    );
-
-    console.log("Filter One", filterOne);
-
-    if (filterOne.length === 0) {
-      return alert("No match");
-    } else {
-      const filterTwo = filterOne.filter((pokemon) =>
-        pokemon.type.some((type) => currentType === type)
-      );
-      return setResults(filterTwo);
-    }
-
-    /*     const filter = pokedex.filter((pokemon) =>
-      pokemon.name.english.toLowerCase().includes(lowerCase)
-    );
-
-    if (filter.length === 0) {
-      return alert("No match");
-    } else if (currentType === "All types") {
-      console.log(filter);
-    } else {
-      filter.filter((pokemon) => pokemon.type.includes(currentType));
-    }
+    });
 
     setResults(filter);
-
-    if (filter.length === 0) return alert("No match"); */
+    setInputText("");
+    setCurrentType("All types");
+    if (filter.length === 0) return alert("No match");
   };
 
   console.log(results);
