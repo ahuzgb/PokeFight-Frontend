@@ -4,6 +4,7 @@ import AllPokemon from "./Components/AllPokemon";
 import SinglePokemon from "./Components/SinglePokemon";
 import Fight from "./Components/Fight";
 import Filter from "./Components/Filter";
+import PastFights from "./Components/PastFights";
 import axios from "axios";
 import { useState, useEffect } from "react";
 
@@ -33,6 +34,7 @@ function App() {
         <Route path="/all" element={<AllPokemon pokedex={pokedex} />} />
         <Route path="/:id" element={<SinglePokemon pokedex={pokedex} />} />
         <Route path="/:id/fight" element={<Fight pokedex={pokedex} />} />
+        <Route path="/pastfights" element={<PastFights />} />
       </Routes>
     </div>
   );

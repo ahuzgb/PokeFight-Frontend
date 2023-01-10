@@ -42,6 +42,18 @@ function Fight({ pokedex }) {
         alert(`You win against ${randomOpponent.name.english}!`);
       }
     }
+
+    fetch("http://localhost:8080/game/save", {
+      method: "POST",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        winner: winner,
+        loser: loser,
+      }),
+    });
   };
 
   return (
