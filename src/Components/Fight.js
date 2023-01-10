@@ -10,28 +10,43 @@ function Fight({ pokedex }) {
   console.log(randomOpponent);
   console.log(onePokemon);
 
-  const [opponent, setOpponent] = useState(randomOpponent);
+  const [opponent, setOpponent] = useState(pokedex[0]);
+
+  const [winner, setWinner] = useState("");
+  const [loser, setLoser] = useState("");
+
+  const game = { winner, loser };
 
   const fight = () => {
+    console.log("Winner: " + winner, "Loser: " + loser);
+
     setOpponent(randomOpponent);
     if (randomOpponent.base.Speed > onePokemon.base.Speed) {
       if (randomOpponent.base.Attack > onePokemon.base.HP) {
-        return alert(`You lose against ${randomOpponent.name.english}!`);
+        setWinner(opponent.name.english);
+        setLoser(onePokemon.name.english);
+        alert(`You lose against ${randomOpponent.name.english}!`);
       } else {
-        return alert(`You win against ${randomOpponent.name.english}!`);
+        setWinner(onePokemon.name.english);
+        setLoser(opponent.name.english);
+        alert(`You win against ${randomOpponent.name.english}!`);
       }
     } else {
       if (randomOpponent.base.HP > onePokemon.base.Attack) {
-        return alert(`You lose against ${randomOpponent.name.english}!`);
+        setWinner(opponent.name.english);
+        setLoser(onePokemon.name.english);
+        alert(`You lose against ${randomOpponent.name.english}!`);
       } else {
-        return alert(`You win against ${randomOpponent.name.english}!`);
+        setWinner(onePokemon.name.english);
+        setLoser(opponent.name.english);
+        alert(`You win against ${randomOpponent.name.english}!`);
       }
     }
   };
 
   return (
     <div className="Embark">
-      <h1>Hi there!</h1>
+      <h1>Fight!</h1>
       <p>A wild {randomOpponent?.name.english} appeared. </p>
       <h2>{onePokemon?.name.english}</h2>
       <button onClick={() => setOpponent(randomOpponent)}>Run</button>
