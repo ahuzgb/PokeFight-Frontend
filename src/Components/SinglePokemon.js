@@ -23,7 +23,7 @@ function PokeInfo({ pokedex, setFighter, fighter }) {
       <p>Sp. Attack: {onePokemon?.base["Sp. Attack"]}</p>
       <p>Sp. Defense: {onePokemon?.base["Sp. Defense"]}</p>
       <p>Speed {onePokemon?.base.Speed}</p>
-      <Link to={`/${onePokemon.id}/fight`}>
+      <Link to={`/${onePokemon?.id}/fight`}>
         <button
           onClick={() => {
             setFighter(onePokemon);
