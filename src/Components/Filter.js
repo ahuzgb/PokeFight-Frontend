@@ -87,6 +87,7 @@ function Filter({ pokedex }) {
             }}
           >
             <input
+              id="search"
               type="text"
               value={inputText}
               onChange={(e) => {
@@ -96,7 +97,7 @@ function Filter({ pokedex }) {
             />
             {types.map((type) => {
               return (
-                <div>
+                <div id="type">
                   <p>{type}</p>
                   <input
                     type="radio"
@@ -112,7 +113,7 @@ function Filter({ pokedex }) {
                 </div>
               );
             })}
-            {generations.map((gen) => {
+            {/*      {generations.map((gen) => {
               return (
                 <div>
                   <p>{gen}</p>
@@ -129,7 +130,7 @@ function Filter({ pokedex }) {
                   />
                 </div>
               );
-            })}
+            })} */}
             <button type="submit">Search</button>
           </form>{" "}
         </div>

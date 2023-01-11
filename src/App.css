@@ -1,0 +1,19 @@
+/* Navbar */
+
+.Navbar {
+  display: flex;
+  justify-content: flex-end;
+  gap: 2%;
+}
+
+.Navbar a {
+  color: whitesmoke;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Homepage */
+
+body {
+  background-image: url("https://assets.pokemon.com//assets/cms2/img/misc/virtual-backgrounds/sword-shield/pokemon-gym.png");
+  background-size: 100%;
+}

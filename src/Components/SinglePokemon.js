@@ -8,7 +8,7 @@ function PokeInfo({ pokedex, setFighter, fighter }) {
   const onePokemon = pokedex.find((pokemon) => pokemon.id === Number(id));
 
   return (
-    <div className="SinglePokemon">
+    <div className={`SinglePokemon ${onePokemon.type[0]}`}>
       <h1>{onePokemon?.name.english}</h1>
       <p>#{onePokemon?.id}</p>
       {onePokemon?.type.map((type) => (
