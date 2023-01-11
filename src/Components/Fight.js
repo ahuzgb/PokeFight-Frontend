@@ -13,7 +13,9 @@ function Fight({ pokedex }) {
   const [opponent, setOpponent] = useState(pokedex[0]);
 
   const [winner, setWinner] = useState("");
+  const [winnerID, setWinnerID] = useState();
   const [loser, setLoser] = useState("");
+  const [loserID, setLoserID] = useState();
 
   const game = { winner, loser };
 
@@ -24,21 +26,29 @@ function Fight({ pokedex }) {
     if (randomOpponent.base.Speed > onePokemon.base.Speed) {
       if (randomOpponent.base.Attack > onePokemon.base.HP) {
         setWinner(opponent.name.english);
+        setWinnerID(opponent.id);
         setLoser(onePokemon.name.english);
+        setLoser(onePokemon.id);
         alert(`You lose against ${randomOpponent.name.english}!`);
       } else {
         setWinner(onePokemon.name.english);
+        setWinnerID(onePokemon.id);
         setLoser(opponent.name.english);
+        setLoserID(opponent.id);
         alert(`You win against ${randomOpponent.name.english}!`);
       }
     } else {
       if (randomOpponent.base.HP > onePokemon.base.Attack) {
         setWinner(opponent.name.english);
+        setWinnerID(opponent.id);
         setLoser(onePokemon.name.english);
+        setLoser(onePokemon.id);
         alert(`You lose against ${randomOpponent.name.english}!`);
       } else {
         setWinner(onePokemon.name.english);
+        setWinnerID(onePokemon.id);
         setLoser(opponent.name.english);
+        setLoserID(opponent.id);
         alert(`You win against ${randomOpponent.name.english}!`);
       }
     }
@@ -51,7 +61,9 @@ function Fight({ pokedex }) {
       },
       body: JSON.stringify({
         winner: winner,
+        winnerID: winnerID,
         loser: loser,
+        loserID: loserID,
       }),
     });
   };

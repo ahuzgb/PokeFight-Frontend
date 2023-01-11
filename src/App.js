@@ -7,6 +7,8 @@ import Filter from "./Components/Filter";
 import PastFights from "./Components/PastFights";
 import axios from "axios";
 import { useState, useEffect } from "react";
+import Navbar from "./Components/Navbar";
+import Footer from "./Components/Footer";
 
 function App() {
   const url = "http://localhost:8080/pokemon";
@@ -29,13 +31,15 @@ function App() {
 
   return (
     <div className="App">
+      <Navbar />
       <Routes>
         <Route path="/" element={<Filter pokedex={pokedex} />} />
         <Route path="/all" element={<AllPokemon pokedex={pokedex} />} />
         <Route path="/:id" element={<SinglePokemon pokedex={pokedex} />} />
         <Route path="/:id/fight" element={<Fight pokedex={pokedex} />} />
-        <Route path="/pastfights" element={<PastFights />} />
+        <Route path="/pastfights" element={<PastFights pokedex={pokedex} />} />
       </Routes>
+      <Footer />
     </div>
   );
 }
