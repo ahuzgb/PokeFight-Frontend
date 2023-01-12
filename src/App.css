@@ -1,0 +1,273 @@
+.App {
+  width: 750px;
+  margin: 0px auto;
+  background-color: rgba(255, 255, 255, 0.7);
+  padding: 30px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Navbar */
+
+.Navbar {
+  display: flex;
+  justify-content: space-between;
+}
+
+#navlinks {
+  display: flex;
+  gap: 10%;
+  justify-content: flex-end;
+}
+
+.Navbar a {
+  color: black;
+  font-family: Arial, Helvetica, sans-serif;
+  margin-bottom: 40px;
+}
+
+/* Homepage */
+
+body {
+  background-image: url("https://assets.pokemon.com//assets/cms2/img/misc/virtual-backgrounds/sword-shield/pokemon-in-the-wild.png");
+  background-size: 100%;
+}
+
+#typesearch {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  gap: 5%;
+}
+
+.typeselect {
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+/* Pokedex */
+
+.pokedex {
+  max-width: 750px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.pokedex img {
+  width: 120px;
+}
+
+.onePoke {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+}
+
+.Grass {
+  background-color: #7ac74c;
+}
+
+.Fire {
+  background-color: #ee8130;
+}
+
+.Water {
+  background-color: #6390f0;
+}
+
+.Normal {
+  background-color: #a8a77a;
+}
+
+.Electric {
+  background-color: #f7d02c;
+}
+
+.Fighting {
+  background-color: #c22e28;
+}
+
+.Flying {
+  background-color: #a98ff3;
+}
+
+.Psychic {
+  background-color: #f95587;
+}
+
+.Ground {
+  background-color: #e2bf65;
+}
+
+.Ghost {
+  background-color: #735797;
+}
+
+.Ice {
+  background-color: #96d9d6;
+}
+
+.Rock {
+  background-color: #b6a136;
+}
+
+.Dragon {
+  background-color: #6f35fc;
+}
+
+.Steel {
+  background-color: #b7b7ce;
+}
+
+.Fairy {
+  background-color: #d685ad;
+}
+
+.Bug {
+  background-color: #a6b91a;
+}
+
+.Dark {
+  background-color: #705746;
+}
+
+.Poison {
+  background-color: #a33ea1;
+}
+
+/*Pagination*/
+
+.pagination-container {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  gap: 3%;
+  justify-content: flex-start;
+  font-size: 0.8em;
+}
+
+ul.pagination-container {
+  margin: 0;
+  margin-top: 20px;
+  padding: 0;
+}
+
+/*Single Pokemon*/
+
+.SinglePokemon {
+  padding: 20px;
+  width: 70%;
+}
+.SinglePokemon img {
+  width: 200px;
+}
+
+#imgstats {
+  display: flex;
+}
+
+#Grass {
+  background-color: #7ac74c;
+}
+
+#Fire {
+  background-color: #ee8130;
+}
+
+#Water {
+  background-color: #6390f0;
+}
+
+#Normal {
+  background-color: #a8a77a;
+}
+
+#Electric {
+  background-color: #f7d02c;
+}
+
+#Fighting {
+  background-color: #c22e28;
+}
+
+#Flying {
+  background-color: #a98ff3;
+}
+
+#Psychic {
+  background-color: #f95587;
+}
+
+#Ground {
+  background-color: #e2bf65;
+}
+
+#Ghost {
+  background-color: #735797;
+}
+
+#Ice {
+  background-color: #96d9d6;
+}
+
+#Rock {
+  background-color: #b6a136;
+}
+
+#Dragon {
+  background-color: #6f35fc;
+}
+
+#Steel {
+  background-color: #b7b7ce;
+}
+
+#Fairy {
+  background-color: #d685ad;
+}
+
+#Bug {
+  background-color: #a6b91a;
+}
+
+#Dark {
+  background-color: #6f35fc;
+}
+
+#Poison {
+  background-color: #a33ea1;
+}
+
+.typetag {
+  width: 70px;
+  border-radius: 5px;
+}
+
+.typetag p {
+  padding: 5px;
+}
+
+/*Fight */
+
+#fight {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+}
+
+#fight img {
+  max-width: 200px;
+}
+
+/*PastFights*/
+
+.oneFight {
+  display: flex;
+}
+
+.oneFight img {
+  width: 60px;
+}

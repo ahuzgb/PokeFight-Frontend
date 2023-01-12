@@ -20,21 +20,23 @@ function PastFights({ pokedex }) {
 
   return (
     <div className="PastFights">
-      <h1>Past Fights</h1>
-      {fights.map((fight) => {
-        return (
-          <div>
-            <p>Winner: {fight.winner}</p>
-            <img
-              src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${fight.winnerID}.png`}
-            />
-            <p>Loser: {fight.loser}</p>
-            <img
-              src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${fight.loserID}.png`}
-            />
-          </div>
-        );
-      })}
+      <h1>Scores</h1>
+      <div id="allFights">
+        {fights.map((fight) => {
+          return (
+            <div className="oneFight">
+              <p>Winner: {fight.winner}</p>
+              <img
+                src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${fight.winnerID}.png`}
+              />
+              <p>Loser: {fight.loser}</p>
+              <img
+                src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${fight.loserID}.png`}
+              />
+            </div>
+          );
+        })}
+      </div>
     </div>
   );
 }
