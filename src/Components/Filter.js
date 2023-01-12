@@ -34,7 +34,7 @@ function Filter({ pokedex }) {
     "Rock",
   ];
 
-  const generations = [
+  /*  const generations = [
     "All generations",
     "Generation I",
     "Generation II",
@@ -51,7 +51,7 @@ function Filter({ pokedex }) {
   const genIV = [pokedex.slice(387, 492)];
   const genV = [pokedex.slice(493, 648)];
   const genVI = [pokedex.slice(649, 720)];
-  const genVII = [pokedex.slice(721, 809)];
+  const genVII = [pokedex.slice(721, 809)]; */
 
   const searchHandler = (e, query) => {
     e.preventDefault();
@@ -78,7 +78,6 @@ function Filter({ pokedex }) {
 
   return (
     <div className="Filter">
-      <h1>Pokemon Arena</h1>
       {results.length === 0 ? (
         <div>
           <form
@@ -95,24 +94,26 @@ function Filter({ pokedex }) {
                 return setQuery(e.target.value);
               }}
             />
-            {types.map((type) => {
-              return (
-                <div id="type">
-                  <p>{type}</p>
-                  <input
-                    type="radio"
-                    name={type}
-                    id={type}
-                    value={type}
-                    checked={currentType === type ? true : false}
-                    onChange={(e) => {
-                      setCurrentType(e.target.value);
-                      console.log(currentType);
-                    }}
-                  />
-                </div>
-              );
-            })}
+            <div id="typesearch">
+              {types.map((type) => {
+                return (
+                  <div className="typeselect">
+                    <p className={`${type}`}>{type}</p>
+                    <input
+                      type="radio"
+                      name={type}
+                      id={type}
+                      value={type}
+                      checked={currentType === type ? true : false}
+                      onChange={(e) => {
+                        setCurrentType(e.target.value);
+                        console.log(currentType);
+                      }}
+                    />
+                  </div>
+                );
+              })}{" "}
+            </div>
             {/*      {generations.map((gen) => {
               return (
                 <div>

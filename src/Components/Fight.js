@@ -69,11 +69,24 @@ function Fight({ pokedex }) {
   };
 
   return (
-    <div className="Embark">
+    <div className="Fight">
       <h1>Fight!</h1>
-      <p>A wild {randomOpponent?.name.english} appeared. </p>
-      <h2>{onePokemon?.name.english}</h2>
+      <div id="fight">
+        <div id="opp">
+          <h2>A wild {randomOpponent?.name.english} appeared. </h2>
+          <img
+            src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${randomOpponent?.id}.png`}
+          />
+        </div>
+        <div id="mypokemon">
+          <h2>Let's go, {onePokemon?.name.english}!</h2>
+          <img
+            src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${onePokemon?.id}.png`}
+          />
+        </div>
+      </div>
       <button onClick={() => setOpponent(randomOpponent)}>Run</button>
+
       <button onClick={() => fight()}>Fight</button>
     </div>
   );

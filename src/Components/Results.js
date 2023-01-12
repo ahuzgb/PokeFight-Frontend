@@ -4,11 +4,11 @@ import { useState, useEffect } from "react";
 
 function Results({ results }) {
   return (
-    <div className="Results">
+    <div className="Results pokedex">
       {results?.map((result) => {
         return (
           <Link to={`/${result.id}`}>
-            <div>
+            <div className={`onePoke ${result.type[0]}`}>
               <h2>{result.name.english}</h2>
               <img
                 src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${result.id}.png`}
