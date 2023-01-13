@@ -9,7 +9,9 @@ function Results({ results }) {
         return (
           <Link to={`/${result.id}`}>
             <div className={`onePoke ${result.type[0]}`}>
-              <h2>{result.name.english}</h2>
+              <h2>
+                #{result.id} {result.name.english}
+              </h2>
               <img
                 src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${result.id}.png`}
               />

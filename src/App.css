@@ -850,7 +850,8 @@ th p {
   to {
     transform: rotate(360deg);
   }
-=======
+}
+
 .footer-content {
   text-align: center;
   padding: 20px;
