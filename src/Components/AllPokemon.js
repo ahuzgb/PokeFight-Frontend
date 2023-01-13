@@ -1,6 +1,5 @@
 import "../App.css";
 import { Route, Routes, Link } from "react-router-dom";
-import ReactPaginate from "react-paginate";
 import { useState } from "react";
 import Pagination from "./Pagination";
 

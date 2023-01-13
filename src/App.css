@@ -751,11 +751,106 @@ ul.pagination-container {
 
 .oneFight {
   display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .oneFight img {
   width: 60px;
 }
+
+td {
+  width: 50%;
+  padding-bottom: 1em;
+}
+
+.looser-col {
+  background-color: rgba(191, 191, 191, 0.6);
+}
+
+.winner-col {
+  background-color: rgba(255, 215, 0, 0.6);
+}
+
+.score-table {
+  width: 50%;
+  margin: 2em auto;
+}
+
+table,
+th,
+td {
+  border: 1px solid;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+th p {
+  font-size: 0.8em;
+}
+
+#scores-title {
+  font-family: "Press Start 2P", cursive;
+  text-align: center;
+  font-size: 1.7em;
+}
+
+.score-table th h3 {
+  font-family: "Press Start 2P", cursive;
+  font-size: 0.8em;
+}
+
+.loader_container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.loader_spinner {
+  position: relative;
+  height: 100px;
+  width: 100px;
+  background: linear-gradient(to bottom, rgb(254, 0, 1) 50%, white 50%);
+  border-radius: 50%;
+  border: 8px solid black;
+  animation: spin 1s linear infinite;
+}
+
+.loader_spinner::before {
+  content: "";
+  position: absolute;
+  height: 8px;
+  width: 100px;
+  background: black;
+  top: 50px;
+  transform: translatey(-50%);
+}
+
+.loader_spinner::after {
+  content: "";
+  position: absolute;
+  height: 38px;
+  width: 38px;
+  border-radius: 50%;
+  background: white;
+  top: 50px;
+  left: 50px;
+  transform: translate(-50%, -50%);
+  box-shadow: inset 0 0 0 8px black, inset 0 0 0 10px white,
+    inset 0 0 0 12px black;
+}
+
+/* Spin Animation */
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+=======
 .footer-content {
   text-align: center;
   padding: 20px;
