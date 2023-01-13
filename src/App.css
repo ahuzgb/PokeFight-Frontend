@@ -6,6 +6,10 @@
   font-family: "Roboto", sans-serif;
 }
 
+.same-color {
+  color: rgb(29, 29, 173);
+}
+
 /* Navbar */
 .Navbar {
   height: 60px;
