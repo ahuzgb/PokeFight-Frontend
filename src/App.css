@@ -259,10 +259,45 @@ ul.pagination-container {
   display: flex;
   flex-direction: row-reverse;
   justify-content: space-between;
+  align-items: center;
 }
 
 #fight img {
   max-width: 200px;
+}
+#fight-btn {
+  display: flex;
+  gap: 2%;
+  justify-content: center;
+}
+#fight-btn button {
+  width: 80px;
+  height: 60px;
+  border-radius: 5px;
+  font-family: "Press Start 2P", cursive;
+  background-color: #f5deb3;
+}
+
+#opp img {
+  padding-left: 60px;
+}
+#mypokemon img {
+  padding-left: 20px;
+}
+
+.Fight h1 {
+  text-align: center;
+}
+#fight h2 {
+  font-family: "Press Start 2P", cursive;
+  font-size: 11px;
+  border-color: black;
+  border-width: 5px;
+  border-style: dashed;
+  padding: 20px 10px;
+  box-sizing: border-box;
+  background-clip: padding-box;
+  background-color: whitesmoke;
 }
 
 /*PastFights*/
