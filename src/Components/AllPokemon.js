@@ -5,14 +5,9 @@ import { useState } from "react";
 import Pagination from "./Pagination";
 
 function Pokedex({ pokedex }) {
-  /* const [currentPage, setCurrentPage] = useState(1);
-  const indexOfLastRecord = currentPage * 9;
-  const indexOfFirstRecord = indexOfLastRecord - 9;
-  const currentRecords = pokedex.slice(indexOfFirstRecord, indexOfLastRecord);
-  const nPages = Math.ceil(pokedex.length / 9); */
-
   const [currentPage, setCurrentPage] = useState(1);
   const [articlesPerPage] = useState(9);
+  const [showOverlay, setShowOverlay] = useState(false);
 
   const indexOfLastArticle = currentPage * articlesPerPage;
   const indexOfFirstArticle = indexOfLastArticle - articlesPerPage;
@@ -31,7 +26,7 @@ function Pokedex({ pokedex }) {
         {currentArticles?.map((pokemon) => (
           <Link to={`/${pokemon.id}`}>
             <div key={pokemon.id} className={`onePoke ${pokemon.type[0]}`}>
-              <h3>
+              <h3 className="same-color">
                 #{pokemon.id} {pokemon.name.english}
               </h3>
               <img
@@ -42,9 +37,6 @@ function Pokedex({ pokedex }) {
         ))}
       </div>
       <Pagination
-        /*         nPages={nPages}
-        currentPage={currentPage}
-        setCurrentPage={setCurrentPage} */
         articlesPerPage={articlesPerPage}
         totalArticles={pokedex.length}
         paginate={paginate}
