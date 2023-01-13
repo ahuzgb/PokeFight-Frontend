@@ -13,7 +13,7 @@ function Filter({ pokedex }) {
   const resetResults = () => setResults([]);
 
   const types = [
-    "All types",
+    "All",
     "Normal",
     "Psychic",
     "Bug",
@@ -58,7 +58,7 @@ function Filter({ pokedex }) {
     const lowerCase = query.toLowerCase();
     console.log(lowerCase);
     const filter = pokedex.filter((pokemon) => {
-      if (currentType === "All types") {
+      if (currentType === "All") {
         return pokemon.name.english.toLowerCase().includes(lowerCase);
       } else {
         return (
@@ -70,7 +70,7 @@ function Filter({ pokedex }) {
 
     setResults(filter);
     setInputText("");
-    setCurrentType("All types");
+    setCurrentType("All");
     if (filter.length === 0) return alert("No match");
   };
 
@@ -85,31 +85,41 @@ function Filter({ pokedex }) {
               searchHandler(e, query);
             }}
           >
-            <input
-              id="search"
-              type="text"
-              value={inputText}
-              onChange={(e) => {
-                setInputText(e.target.value);
-                return setQuery(e.target.value);
-              }}
-            />
+            <div className="center">
+              <input
+                type="text"
+                name="text"
+                class="input"
+                placeholder="Search!"
+                value={inputText}
+                onChange={(e) => {
+                  setInputText(e.target.value);
+                  return setQuery(e.target.value);
+                }}
+              ></input>
+            </div>
+
             <div id="typesearch">
               {types.map((type) => {
                 return (
                   <div className="typeselect">
-                    <p className={`${type}`}>{type}</p>
-                    <input
-                      type="radio"
-                      name={type}
-                      id={type}
-                      value={type}
-                      checked={currentType === type ? true : false}
-                      onChange={(e) => {
-                        setCurrentType(e.target.value);
-                        console.log(currentType);
-                      }}
-                    />
+                    <label>
+                      <div className="p-style " id={`${type}`}>
+                        <p>{type}</p>
+                      </div>
+                      <input
+                        className="chcecked"
+                        type="radio"
+                        name={type}
+                        id={type}
+                        value={type}
+                        checked={currentType === type ? true : false}
+                        onChange={(e) => {
+                          setCurrentType(e.target.value);
+                          console.log(currentType);
+                        }}
+                      />
+                    </label>
                   </div>
                 );
               })}{" "}
@@ -132,7 +142,9 @@ function Filter({ pokedex }) {
                 </div>
               );
             })} */}
-            <button type="submit">Search</button>
+            <button className="search-btn" type="submit">
+              <span>Search</span>
+            </button>
           </form>{" "}
         </div>
       ) : (
