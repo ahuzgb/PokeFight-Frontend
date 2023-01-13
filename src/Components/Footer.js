@@ -1,11 +1,26 @@
 import "../App.css";
 
-function Footer() {
+const Footer = () => {
   return (
-    <div className="Footer">
-      <p>Created by the greatest people in the world.</p>
-    </div>
+    <footer className="pokemon-footer" id="footer-back">
+      <div className="footer-content">
+        <p>Copyright © Pokemon Adventure</p>
+        <nav>
+          <ul>
+            <li>
+              <a href="#">About</a>
+            </li>
+            <li>
+              <a href="#">Contact</a>
+            </li>
+            <li>
+              <a href="#">Privacy Policy</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </footer>
   );
-}
+};
 
 export default Footer;

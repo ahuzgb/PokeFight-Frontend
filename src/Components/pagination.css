@@ -1,0 +1,36 @@
+.pagination-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 10vh;
+  flex-wrap: nowrap;
+}
+
+.pagination-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 0px;
+}
+
+.pagination-link {
+  text-decoration: none;
+  color: #000;
+  font-size: 0.7rem;
+}
+
+.pagination-btns {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 0px;
+}
+
+button:hover {
+  padding: 10px 10px;
+  background-color: #fff;
+  border: 1px solid #000;
+  font-size: 1rem;
+  border-radius: 10%;
+  cursor: pointer;
+}

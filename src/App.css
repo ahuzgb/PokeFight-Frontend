@@ -6,9 +6,153 @@
   font-family: "Roboto", sans-serif;
 }
 
-/* Navbar */
+.same-color {
+  color: rgb(29, 29, 173);
+}
 
+/* Navbar */
 .Navbar {
+  height: 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #5265c4;
+  margin: 20px;
+  opacity: 0.9;
+}
+
+.Navbar > .nav-logo {
+  font-weight: 700;
+  font-size: 12px;
+  margin: 15px;
+  color: #ea7e3b;
+  font-family: "Press Start 2P", cursive;
+}
+
+.Navbar > .nav-items > a {
+  color: #dc5656;
+  font-size: 12px;
+  text-decoration: none;
+  margin: 8px;
+  position: relative;
+  opacity: 0.9;
+  font-family: "Press Start 2P", cursive;
+}
+
+.Navbar > .nav-items > a:hover {
+  color: black;
+}
+:after {
+  content: "";
+  background: white;
+  position: absolute;
+  z-index: -1;
+  left: -20%;
+  right: -20%;
+  top: 0;
+  bottom: 0;
+  transform: skewX(-45deg) scale(0, 1);
+  transition: all 0.5s;
+}
+.Navbar > .nav-items > :hover:after {
+  content: "";
+  background: rgb(230, 128, 12);
+  position: absolute;
+  z-index: -1;
+  left: -6%;
+  right: -3%;
+  top: 0;
+  bottom: 0;
+  transform: skewX(-45deg) scale(0, 1);
+  transition: all 0.5s;
+}
+
+.Navbar > .nav-items > a:hover::after {
+  transform: skewX(-45deg) scale(1, 1);
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+.Navbar > .nav-toggle {
+  display: none;
+}
+
+@media (max-width: 700px) {
+  .Navbar > .nav-items {
+    position: absolute;
+    top: 60px;
+    display: flex;
+    flex-direction: column;
+    background: #3b4da7;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform: translateX(-100%);
+    transition: all 0.45s;
+  }
+
+  .Navbar > .nav-items > a::before {
+    background: transparent;
+  }
+
+  .Navbar > .nav-items.open {
+    transform: translateX(0);
+  }
+
+  .Navbar > .nav-toggle {
+    display: flex;
+    width: 50px;
+    height: 50px;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+  }
+
+  .nav-toggle > .bar {
+    position: relative;
+    width: 32px;
+    height: 2px;
+    background: #ffffff;
+    transition: all 0.45s ease-in-out;
+  }
+
+  .nav-toggle > .bar::before,
+  .nav-toggle > .bar::after {
+    content: "";
+    position: absolute;
+    height: 2px;
+    background: #ffffff;
+    border-radius: 2px;
+    transition: all 0.45s ease-in-out;
+  }
+
+  .nav-toggle > .bar::before {
+    width: 25px;
+    transform: translateY(-8px);
+    right: 0;
+  }
+
+  .nav-toggle > .bar::after {
+    width: 32px;
+    transform: translateY(8px);
+  }
+
+  .nav-toggle.open > .bar {
+    transform: translateX(-40px);
+    background: transparent;
+  }
+
+  .nav-toggle.open > .bar::before {
+    width: 32px;
+    transform: rotate(45deg) translate(26px, -26px);
+  }
+
+  .nav-toggle.open > .bar::after {
+    transform: rotate(-45deg) translate(26px, 26px);
+  }
+}
+
+/* .Navbar {
   display: flex;
   justify-content: space-between;
 }
@@ -26,7 +170,7 @@
 
 .Navbar h1 {
   font-family: "Press Start 2P", cursive;
-}
+} */
 
 /* Homepage */
 
@@ -34,17 +178,254 @@ body {
   background-image: url("https://assets.pokemon.com//assets/cms2/img/misc/virtual-backgrounds/sword-shield/pokemon-in-the-wild.png");
   background-size: 100%;
 }
+.center {
+  text-align: center;
+  margin: 10px;
+}
+.input {
+  border: none;
+  border-radius: 15px;
+  padding: 15px;
+  background-color: #e8e8e8;
+  box-shadow: 6px 6px 12px #ffffff, -6px -6px 12px #c5c5c5;
+  font-size: medium;
+  font-weight: bold;
+  max-width: 400px;
+  opacity: 65%;
+  margin-top: 50px;
+}
 
+.input:focus {
+  outline-color: white;
+  place-content: "Search!";
+}
 #typesearch {
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
   gap: 5%;
+  margin-top: 25px;
+  text-align: center;
+  margin-left: 50px;
 }
 
 .typeselect {
   display: flex;
   flex-direction: row-reverse;
+  cursor: pointer;
+  justify-content: center;
+}
+.p-style {
+  border: none;
+  width: 65px;
+  height: 40px;
+  color: #fff;
+  z-index: 1;
+  display: flex;
+  margin-bottom: 5px;
+  position: relative;
+  cursor: pointer;
+}
+
+.p-style p {
+  margin: 0 auto;
+  align-self: center;
+  font-size: 0.8em;
+  font-weight: bold;
+  text-align: center;
+}
+.p-style::after {
+  position: absolute;
+  content: "";
+  width: 100%;
+  z-index: -1;
+  height: 10%;
+  bottom: 0;
+  clip-path: polygon(
+    0% 74%,
+    4% 75%,
+    8% 76%,
+    11% 77%,
+    15% 78%,
+    20% 78%,
+    25% 77%,
+    32% 77%,
+    37% 75%,
+    40% 74%,
+    43% 74%,
+    46% 73%,
+    52% 72%,
+    57% 72%,
+    65% 74%,
+    66% 75%,
+    71% 78%,
+    75% 82%,
+    81% 86%,
+    83% 88%,
+    88% 91%,
+    90% 94%,
+    94% 96%,
+    98% 98%,
+    100% 100%,
+    82% 100%,
+    0 100%
+  );
+  background: #8792eb;
+  transition: 0.2s ease;
+}
+.p-style::before {
+  position: absolute;
+  content: "";
+  /*   bottom: 80%; */
+  transform: rotate(180deg);
+  width: 100%;
+  height: 10%;
+  transition: 0.2s ease;
+  /*   bottom:; */
+  z-index: -1;
+  clip-path: polygon(
+    0% 74%,
+    4% 75%,
+    8% 76%,
+    11% 77%,
+    15% 78%,
+    20% 78%,
+    25% 77%,
+    32% 77%,
+    37% 75%,
+    40% 74%,
+    43% 74%,
+    46% 73%,
+    52% 72%,
+    57% 72%,
+    65% 74%,
+    66% 75%,
+    71% 78%,
+    75% 82%,
+    81% 86%,
+    83% 88%,
+    88% 91%,
+    90% 94%,
+    94% 96%,
+    98% 98%,
+    100% 100%,
+    82% 100%,
+    0 100%
+  );
+  background: #8792eb;
+}
+.p-style:hover::after {
+  clip-path: polygon(
+    0 30%,
+    9% 34%,
+    7% 39%,
+    11% 43%,
+    13% 33%,
+    17% 30%,
+    24% 34%,
+    25% 35%,
+    30% 31%,
+    30% 38%,
+    39% 33%,
+    35% 43%,
+    43% 45%,
+    55% 46%,
+    65% 74%,
+    67% 66%,
+    81% 57%,
+    75% 82%,
+    81% 86%,
+    83% 88%,
+    88% 91%,
+    90% 94%,
+    94% 96%,
+    98% 98%,
+    100% 100%,
+    82% 100%,
+    0 100%
+  );
+  height: 80%;
+}
+.p-style:hover::before {
+  clip-path: polygon(
+    0 30%,
+    9% 34%,
+    7% 39%,
+    11% 43%,
+    13% 33%,
+    17% 30%,
+    24% 34%,
+    25% 35%,
+    30% 31%,
+    30% 38%,
+    39% 33%,
+    35% 43%,
+    43% 45%,
+    55% 46%,
+    65% 74%,
+    67% 66%,
+    81% 57%,
+    75% 82%,
+    81% 86%,
+    83% 88%,
+    88% 91%,
+    90% 94%,
+    94% 96%,
+    98% 98%,
+    100% 100%,
+    82% 100%,
+    0 100%
+  );
+  height: 80%;
+}
+
+.chcecked {
+  cursor: pointer;
+  margin-right: 6px;
+  display: inline-block;
+  margin-bottom: 25px;
+}
+.chcecked:checked {
+  accent-color: black;
+}
+.search-btn {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 90px;
+  background: #3b4da7;
+  font-family: "Montserrat", sans-serif;
+  box-shadow: 0px 6px 24px 0px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  border: none;
+  cursor: pointer;
+  height: 25px;
+  width: 100px;
+  margin-left: 40%;
+  margin-top: 35px;
+}
+
+.search-btn:hover::after {
+  right: auto;
+  left: 0;
+  width: 100%;
+}
+.search-btn span {
+  text-align: center;
+  text-decoration: none;
+  width: 100%;
+  padding: 18px 25px;
+  color: #fff;
+  font-size: 1.125em;
+  font-weight: 700;
+  letter-spacing: 0.3em;
+  z-index: 20;
+  transition: all 0.3s ease-in-out;
+}
+.search-btn:hover span {
+  color: #000000;
+  animation: scaleUp 0.3s ease-in-out;
 }
 
 /* Pokedex */
@@ -67,6 +448,10 @@ body {
   justify-content: center;
   align-items: center;
   border-radius: 10px;
+}
+
+#All {
+  background-color: #404040;
 }
 
 .Grass {
@@ -161,15 +546,50 @@ ul.pagination-container {
 /*Single Pokemon*/
 
 .SinglePokemon {
-  padding: 20px;
-  width: 70%;
+  display: flex;
+  flex-direction: column;
 }
-.SinglePokemon img {
+
+.SinglePokemon h1 {
+  font-family: "Press Start 2P", cursive;
+  margin: 0px;
+}
+
+.SinglePokemon h2 {
+  font-family: "Press Start 2P", cursive;
+  font-size: 1em;
+}
+
+#stats p {
+  background-color: palegoldenrod;
+  padding: 2px;
+  font-size: 1.2em;
+  padding-left: 10px;
   width: 200px;
+  font-family: "Roboto", sans-serif;
+}
+
+#singlePokemon {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  align-items: center;
+  gap: 60px;
+  border: 3px solid black;
+  border-radius: 30px;
+  background-color: whitesmoke;
+  padding: 0px 20px;
+}
+
+.SinglePokemon img {
+  width: auto;
+  height: 350px;
 }
 
 #imgstats {
   display: flex;
+  flex-direction: column;
+  font-size: 0.8em;
 }
 
 #Grass {
@@ -246,11 +666,38 @@ ul.pagination-container {
 
 .typetag {
   width: 70px;
+  height: 20px;
   border-radius: 5px;
+  margin-right: 5px;
+}
+
+.types {
+  display: flex;
+  flex-direction: row;
+  text-align: center;
 }
 
 .typetag p {
-  padding: 5px;
+  padding: 0px;
+  margin-top: 2px;
+  font-weight: bold;
+  font-style: italic;
+}
+
+.singlePokeButton {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.singlePokeButton button {
+  background-color: palegoldenrod;
+  height: 30px;
+  border-radius: 5px;
+  margin-top: 10px;
+  margin-right: 2px;
+  margin-left: 2px;
+  border: 2px solid black;
+  cursor: pointer;
 }
 
 /*Fight */
@@ -259,10 +706,45 @@ ul.pagination-container {
   display: flex;
   flex-direction: row-reverse;
   justify-content: space-between;
+  align-items: center;
 }
 
 #fight img {
   max-width: 200px;
+}
+#fight-btn {
+  display: flex;
+  gap: 2%;
+  justify-content: center;
+}
+#fight-btn button {
+  width: 80px;
+  height: 60px;
+  border-radius: 5px;
+  font-family: "Press Start 2P", cursive;
+  background-color: #f5deb3;
+}
+
+#opp img {
+  padding-left: 60px;
+}
+#mypokemon img {
+  padding-left: 20px;
+}
+
+.Fight h1 {
+  text-align: center;
+}
+#fight h2 {
+  font-family: "Press Start 2P", cursive;
+  font-size: 11px;
+  border-color: black;
+  border-width: 5px;
+  border-style: dashed;
+  padding: 20px 10px;
+  box-sizing: border-box;
+  background-clip: padding-box;
+  background-color: whitesmoke;
 }
 
 /*PastFights*/
@@ -368,4 +850,68 @@ th p {
   to {
     transform: rotate(360deg);
   }
+=======
+.footer-content {
+  text-align: center;
+  padding: 20px;
+  color: #333333; /* text color */
+}
+
+.footer-content p {
+  font-size: 8px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  margin-right: -620px;
+  top: 5;
+  justify-content: center;
+  position: relative;
+  bottom: 0;
+}
+
+.footer-content ul {
+  list-style: none; /* remove bullet points */
+  padding: 0; /* remove padding */
+  margin: 0; /* remove margin */
+  display: flex; /* display links horizontally */
+  justify-content: center; /* center links */
+  text-decoration: none;
+}
+.pokemon-footer {
+  /* position: relative; */
+  /* bottom: 0;
+  left: 0; */
+
+  width: 100%;
+  margin-top: 20px;
+  opacity: 80%;
+
+  border-top: 2px solid rgb(170, 221, 241); /* add a top border */
+}
+#footer-back {
+  background-image: url("./Components/yellow.jpg");
+  background-size: cover;
+  background-position: center;
+
+  background-repeat: no-repeat;
+}
+.pokemon-footer background-image {
+  opacity: 60%;
+}
+.footer-content li {
+  margin-top: 60px;
+  margin-left: 10px; /* add space between links */
+}
+
+.footer-content a {
+  color: rgb(241, 150, 38); /* link color */
+  text-decoration: none; /* remove underline */
+  font-size: 12px;
+  font-weight: 900;
+
+  opacity: 100%;
+}
+
+.footer-content a:hover {
+  color: rgb(239, 171, 46); /* change link color on hover */
 }
