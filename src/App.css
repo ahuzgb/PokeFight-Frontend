@@ -305,6 +305,10 @@ table {
   border-collapse: collapse;
 }
 
+th p {
+  font-size: 0.8em;
+}
+
 #scores-title {
   font-family: "Press Start 2P", cursive;
   text-align: center;

@@ -38,9 +38,11 @@ function PastFights({ pokedex }) {
           <tr>
             <th>
               <h3>Winners</h3>
+              <p>Good job, you guys.</p>
             </th>
             <th>
               <h3>Loosers</h3>
+              <p>Don't give up, friends.</p>
             </th>
           </tr>
           {fights.map((fight) => (
