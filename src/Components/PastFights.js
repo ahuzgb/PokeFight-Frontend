@@ -41,7 +41,7 @@ function PastFights({ pokedex }) {
               <p>Good job, you guys.</p>
             </th>
             <th>
-              <h3>Loosers</h3>
+              <h3>Losers</h3>
               <p>Don't give up, friends.</p>
             </th>
           </tr>

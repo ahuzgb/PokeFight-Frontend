@@ -149,9 +149,13 @@ function Filter({ pokedex }) {
         </div>
       ) : (
         <div>
-          <button onClick={() => resetResults()}>Back to search</button>
+          <button className="results-back" onClick={() => resetResults()}>
+            Back to search
+          </button>
           <Results results={results} />
-          <button onClick={() => resetResults()}>Back to search</button>
+          <button className="results-back" onClick={() => resetResults()}>
+            Back to search
+          </button>
         </div>
       )}
     </div>

@@ -379,6 +379,18 @@ body {
   height: 80%;
 }
 
+.results-back {
+  background-color: palegoldenrod;
+  height: 30px;
+  border-radius: 5px;
+  margin-top: 10px;
+  margin-right: 2px;
+  margin-left: 2px;
+  border: 2px solid black;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+
 .chcecked {
   cursor: pointer;
   margin-right: 6px;

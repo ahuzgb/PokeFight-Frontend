@@ -28,7 +28,7 @@ function Fight({ pokedex }) {
         setWinner(opponent.name.english);
         setWinnerID(opponent.id);
         setLoser(onePokemon.name.english);
-        setLoser(onePokemon.id);
+        setLoserID(onePokemon.id);
         alert(`You lose against ${randomOpponent.name.english}!`);
       } else {
         setWinner(onePokemon.name.english);

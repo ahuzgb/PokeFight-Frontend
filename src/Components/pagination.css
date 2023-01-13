@@ -26,7 +26,7 @@
   margin-top: 0px;
 }
 
-button:hover {
+.pagination-container button:hover {
   padding: 10px 10px;
   background-color: #fff;
   border: 1px solid #000;
